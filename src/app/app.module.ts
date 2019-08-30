@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { PlatformsService } from './platforms/platforms.service';
 import { PlansComponent } from './plans/plans.component';
 import { PlanComponent } from './plans/plan/plan.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PlanComponent } from './plans/plan/plan.component';
     PlatformsComponent,
     PlatformComponent,
     PlansComponent,
-    PlanComponent
+    PlanComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,

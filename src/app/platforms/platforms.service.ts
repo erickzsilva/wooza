@@ -9,7 +9,7 @@ export class PlatformsService {
 
   constructor(private http: HttpClient) { }
 
-  platform(): Observable<any> {
+  getPlatform(): Observable<any> {
     return this.http.get<any>(`${API}/plataformas`);
 
   }

@@ -16,7 +16,7 @@ export class PlatformsComponent implements OnInit {
   constructor(private platformsService: PlatformsService, private router: Router) { }
 
   ngOnInit() {
-    this.platformsService.platform()
+    this.platformsService.getPlatform()
       .subscribe(platforms => {
         console.log(platforms);
         this.platforms = platforms.plataformas;

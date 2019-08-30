@@ -12,7 +12,11 @@ export class PlansComponent implements OnInit {
 
   plans: Plan[] = []
 
-  constructor(private plansService: PlansService, private route: ActivatedRoute) { }
+  constructor(
+    private plansService: PlansService, 
+    private route: ActivatedRoute,
+    private router: Router
+    ) { }
 
   ngOnInit() {
     const idPlatform = this.route.snapshot.params.id;
@@ -22,6 +26,11 @@ export class PlansComponent implements OnInit {
       console.log(plans);
       this.plans = plans.planos;
     });
+  }
+
+  selectPlan(plan: Plan){
+    console.log(plan);
+    this.router.navigate(['form']);
   }
 
 }
