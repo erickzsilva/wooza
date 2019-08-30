@@ -1,3 +1,3 @@
-<div *ngFor="let platform of platforms" class="">
-    <wza-platform [platform]="platform"></wza-platform>
+<div  class="">
+    <wza-platform  *ngFor="let platform of platforms" [platform]="platform" (click)="selectPlatform(platform)"></wza-platform>
 </div>

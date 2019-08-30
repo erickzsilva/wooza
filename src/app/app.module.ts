@@ -9,20 +9,27 @@ import { PlatformsComponent } from './platforms/platforms.component';
 import { PlatformComponent } from './platforms/platform/platform.component';
 import { HttpClientModule } from '@angular/common/http'
 
+
+import { PlatformsService } from './platforms/platforms.service';
+import { PlansComponent } from './plans/plans.component';
+import { PlanComponent } from './plans/plan/plan.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
     PlatformsComponent,
-    PlatformComponent
+    PlatformComponent,
+    PlansComponent,
+    PlanComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [PlatformsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
