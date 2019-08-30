@@ -1,0 +1,1 @@
+export const PLATAFORMAS_API = 'http://private-59658d-celulardireto2017.apiary-mock.com/plataformas'
