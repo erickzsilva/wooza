@@ -1,3 +1,25 @@
-<p>
-  form works!
-</p>
+<form #form="ngForm" novalidate>
+  {{form.valid}}
+  {{form.value | json}}
+  <div>
+    <label>Plataforma</label>
+    <input type="text" class="" name="" [(ngModel)]="name" value="teste" readonly>
+    <label>SKU</label>
+    <input type="text" class="" name="" [(ngModel)]="name" value="teste" readonly>
+    <label>Franquia</label>
+    <input type="text" class="" name="" [(ngModel)]="name" value="teste" readonly>
+    <label>Valor</label>
+    <input type="text" class="" name="" [(ngModel)]="name" value="teste" readonly>    
+    <label>Nome</label>
+    <input type="text" class="" name="" [(ngModel)]="name">
+    <label>Email</label>
+    <input type="text" class="" name="" [(ngModel)]="name">
+    <label>Nascimento</label>
+    <input type="text" class="" name="" [(ngModel)]="name">
+    <label>CPF</label>
+    <input type="text" class="" name="" [(ngModel)]="name">
+    <label>Telefone</label>
+    <input type="text" class="" name="" [(ngModel)]="name">
+  </div>
+
+</form>

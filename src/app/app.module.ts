@@ -14,6 +14,7 @@ import { PlatformsService } from './platforms/platforms.service';
 import { PlansComponent } from './plans/plans.component';
 import { PlanComponent } from './plans/plan/plan.component';
 import { FormComponent } from './form/form.component';
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FormComponent } from './form/form.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [PlatformsService],
   bootstrap: [AppComponent]

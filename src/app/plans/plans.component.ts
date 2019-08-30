@@ -31,6 +31,7 @@ export class PlansComponent implements OnInit {
   selectPlan(plan: Plan){
     console.log(plan);
     this.router.navigate(['form']);
+    localStorage.setItem('plano', JSON.stringify(plan));
   }
 
 }
