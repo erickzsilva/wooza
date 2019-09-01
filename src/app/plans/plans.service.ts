@@ -10,7 +10,7 @@ export class PlansService {
 
   constructor(private http: HttpClient) { }
 
-  getPlans(id :string ): Observable<any> {
+  getPlans(id: string ): Observable<any> {
     return this.http.get<any>(`${API}/planos/${id}`)
   }
 }

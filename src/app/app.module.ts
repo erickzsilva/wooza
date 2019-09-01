@@ -15,6 +15,7 @@ import { PlansComponent } from './plans/plans.component';
 import { PlanComponent } from './plans/plan/plan.component';
 import { FormComponent } from './form/form.component';
 import { FormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { FormsModule } from '@angular/forms'
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [PlatformsService],
   bootstrap: [AppComponent]
