@@ -1,33 +1,35 @@
 <form class="form" [formGroup]="formClient" (ngSubmit)="onSubmit()" novalidate>
-  <div class="title">
-      <h2>Finalize o seu pedido</h2>
-  </div>                
+    <div class="title">
+        <h2>Finalize o seu pedido</h2>
+    </div>                
 
-  <div class="wrap">
-      <input type="text" class="field" formControlName="name" placeholder="Nome" >
-      <span class="help-block"></span>
-  </div>
+    <div class="wrap">
+        <input type="text" class="field" formControlName="name" placeholder="Nome" >
+        <span class="help-block">teste</span>
+    </div>
 
-  <div class="wrap">
-      <input type="text" class="field" formControlName="email" placeholder="E-mail" >
-      <span class="help-block"></span>
-  </div>
+    <div class="wrap">
+        <input type="text" class="field" formControlName="email" placeholder="E-mail" >
+        <span class="help-block"></span>
+    </div>
 
-  <div class="wrap">
-      <input type="tel" class="field" formControlName="telephone" placeholder="Telefone" >
-      <span class="help-block"></span>
-  </div>
+    <div class="wrap">
+        <input type="tel" class="field" formControlName="telephone" placeholder="Telefone" maxlength="11">
+        <span class="help-block"></span>
+    </div>
 
-  <div class="wrap">
-      <input type="tel" class="field" formControlName="cpf" placeholder="CPF" >
-      <span class="help-block"></span>
-  </div>
+    <div class="wrap">
+        <input type="tel" class="field" formControlName="cpf" placeholder="CPF" maxlength="11">
+        <span class="help-block"></span>
+    </div>
 
-  <div class="wrap">
-      <input type="date" class="field" formControlName="birth" >
-      <span class="help-block"></span>
-  </div>
+    <div class="wrap">
+        <input type="date" class="field" formControlName="birth" >
+        <span class="help-block"></span>
+    </div>
   
-  <input type="submit" class="bnt" value="Enviar" [disabled]="!formClient.valid">
+    <button type="submit" class="bnt" [ngClass]="{'-disabled': !formClient.valid}" [disabled]="!formClient.valid">
+        Enviar
+    </button>
 
 </form>

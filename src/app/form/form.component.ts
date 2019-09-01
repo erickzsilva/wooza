@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { FormGroup, FormBuilder, Validators } from '@angular/forms'
 import { Client } from './../shared/client'
+import { Validator } from './../shared/validator'
 
 @Component({
   selector: 'wza-form',
@@ -13,25 +14,28 @@ export class FormComponent implements OnInit {
 
   numberPattern = /^[0-9]*$/
 
-  cpfPattern = /^([0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}|[0-9]{2}\.?[0-9]{3}\.?[0-9]{3}\/?[0-9]{4}\-?[0-9]{2})$/
-
   formClient: FormGroup
 
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.createForm(new Client());
+    this.createForm();
   }
 
-  createForm(client: Client) { 
+  createForm() { 
     this.formClient = this.formBuilder.group({
       name: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
       email: this.formBuilder.control('', [Validators.required, Validators.pattern(this.emailPattern)]),
-      birth: this.formBuilder.control('', [Validators.required]),
-      cpf: this.formBuilder.control('', [Validators.required, Validators.pattern(this.cpfPattern)]),
+      birth: ['', Validators.compose([Validators.required, Validator.MaiorQue18Anos])],
+      cpf: this.formBuilder.control('', [Validators.compose([Validators.required, Validator.ValidaCpf])]),
+      //cpf: this.formBuilder.control('', [Validators.required, Validator.ValidaCpf]),
       telephone: this.formBuilder.control('', [Validators.required, Validators.pattern(this.numberPattern)]),
 
     })
+  }
+  
+  get cpf() {
+    return this.formClient.get('cpf');
   }
 
   onSubmit() {
@@ -42,7 +46,7 @@ export class FormComponent implements OnInit {
     }
     console.log(data);
  
-    this.formClient.reset(new Client());
+    this.formClient.reset();
   }
 
 }
