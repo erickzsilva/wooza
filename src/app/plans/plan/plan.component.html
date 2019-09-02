@@ -1,10 +1,46 @@
-<div class="">
-  <span class="">{{ plan.sku }}</span>
-  <span class="">{{ plan.franquia }}</span>
-  <span class="">{{ plan.valor }}</span>
-  <span class="">{{ plan.aparelho?.nome }}</span>
-  <span class="">{{ plan.aparelho?.valor }}</span>
-  <span class="">{{ plan.aparelho?.numeroParcelas }}</span>
-  <span class="">{{ plan.aparelho?.valorParcela }}</span>
-  <span class="">{{ plan.ativo }}</span>
-</div>
+<style>
+  .button {
+    border-radius: 4px;
+    background-color: #683e7d;
+    border: none;
+    color: #FFFFFF;
+    font-size: 17px;
+    padding: 20px;
+    min-width: 270px;
+    transition: all 0.5s;
+    cursor: pointer;
+    display: flex;
+    margin: 5px auto;
+    justify-content: center
+  }
+
+  .button span {
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s
+  }
+
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s
+  }
+
+  .button:hover span {
+    padding-right: 25px
+  }
+
+  .button:hover span:after {
+    opacity: 1;
+    right: 0
+  }
+</style>
+
+<button class="button" *ngIf="plan.ativo">
+  <span>Contrate {{ plan.franquia }} por {{plan.valor}}</span>
+</button>

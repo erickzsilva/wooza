@@ -23,15 +23,22 @@ export class PlansComponent implements OnInit {
 
     this.plansService.getPlans(idPlatform)
     .subscribe(plans => {
-      console.log(plans);
-      this.plans = plans.planos;
+      console.log(plans)
+      this.plans = plans.planos
     });
+
+  }
+   data = { 
+    dataPlatform:  JSON.parse(localStorage
+      .getItem('plataforma')
+      .toLowerCase()
+      .replace('|',' '))
   }
 
   selectPlan(plan: Plan){
-    console.log(plan);
-    this.router.navigate(['form']);
-    localStorage.setItem('plano', JSON.stringify(plan));
+    console.log(plan)
+    this.router.navigate(['form'])
+    localStorage.setItem('plano', JSON.stringify(plan))
   }
 
 }

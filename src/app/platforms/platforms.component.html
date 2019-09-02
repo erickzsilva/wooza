@@ -1,8 +1,9 @@
-<div  class="platforms">
-    <h2 class="title">Escolha o dispositivo de sua preferência</h2>
-    <div>
-        <wza-platform  *ngFor="let platform of platforms" [platform]="platform" 
-        (click)="selectPlatform(platform)"></wza-platform>
-    </div>
-    
+<div class="content">
+  <div class="title">
+    <h2>Escolha o dispositivo de sua preferência</h2>
+  </div>
+  <div>
+      <wza-platform  *ngFor="let platform of platforms" [platform]="platform" 
+      (click)="selectPlatform(platform)"></wza-platform>
+  </div>
 </div>

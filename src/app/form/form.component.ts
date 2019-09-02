@@ -27,8 +27,7 @@ export class FormComponent implements OnInit {
       name: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
       email: this.formBuilder.control('', [Validators.required, Validators.pattern(this.emailPattern)]),
       birth: ['', Validators.compose([Validators.required, Validator.MaiorQue18Anos])],
-      cpf: this.formBuilder.control('', [Validators.compose([Validators.required, Validator.ValidaCpf])]),
-      //cpf: this.formBuilder.control('', [Validators.required, Validator.ValidaCpf]),
+      cpf: this.formBuilder.control('', [Validators.compose([Validators.required])]),
       telephone: this.formBuilder.control('', [Validators.required, Validators.pattern(this.numberPattern)]),
 
     })

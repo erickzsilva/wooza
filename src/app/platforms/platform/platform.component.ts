@@ -10,6 +10,8 @@ export class PlatformComponent implements OnInit {
 
   @Input() platform: Platform
 
+  @Input() data: string
+
   constructor() { }
 
   ngOnInit() {
