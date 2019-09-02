@@ -16,6 +16,7 @@ import { PlanComponent } from './plans/plan/plan.component';
 import { FormComponent } from './form/form.component';
 import { FormsModule } from '@angular/forms'
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxMaskModule.forRoot()
   ],
   providers: [PlatformsService],
   bootstrap: [AppComponent]

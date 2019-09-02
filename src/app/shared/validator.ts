@@ -1,7 +1,7 @@
 import { AbstractControl } from '@angular/forms';
 
 export class Validator {
-    static ValidaCpf(controle: AbstractControl) {
+       static ValidaCpf(controle: AbstractControl) {
         const cpf = controle.value;
     
         let soma: number = 0;
@@ -52,15 +52,19 @@ export class Validator {
       }
     
       static MaiorQue18Anos(controle: AbstractControl) {
-        const nascimento = controle.value;
-        const [ano, mes, dia] = nascimento.split('-');
-        const hoje = new Date();
-        const dataNascimento = new Date(ano, mes, dia);
-        const tempoParaTeste = 1000 * 60 * 60 * 24 * 365 * 18; //18 anos em mili segundos...
+        const nascimento = controle.value
+        
+
+        if(nascimento){
+          const [ano, mes, dia] = nascimento.toString().split('-')
+          const hoje = new Date()
+          const dataNascimento = new Date(ano, mes, dia)
+          const tempoParaTeste = 1000 * 60 * 60 * 24 * 365 * 18 //18 anos em mili segundos...
     
-        if (hoje.getTime() - dataNascimento.getTime() + 2178520961 >= tempoParaTeste)
-          return null;
-    
-        return { menorDeIdade: true };
+          if (hoje.getTime() - dataNascimento.getTime() + 2178520961 >= tempoParaTeste)
+            return null;      
+          return { menorDeIdade: true }
+        }
+        return null;
       }
 }

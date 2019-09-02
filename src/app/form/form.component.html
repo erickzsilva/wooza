@@ -5,27 +5,37 @@
 
     <div class="wrap">
         <input type="text" class="field" formControlName="name" placeholder="Nome" >
-        <span class="help-block">teste</span>
+        <span class="help-block" *ngIf="formClient.get('name').invalid && formClient.get('name').touched">
+            Informe no mínimo 5 caracteres.
+        </span>
     </div>
 
     <div class="wrap">
         <input type="text" class="field" formControlName="email" placeholder="E-mail" >
-        <span class="help-block"></span>
+        <span class="help-block" *ngIf="formClient.get('email').invalid && formClient.get('email').touched">
+            E-mail inválido (Ex.: email@mail.com).
+        </span>
     </div>
 
     <div class="wrap">
-        <input type="tel" class="field" formControlName="telephone" placeholder="Telefone" maxlength="11">
-        <span class="help-block"></span>
+        <input type="tel" class="field" formControlName="telephone" placeholder="Telefone" mask="(09) 00000-0000">
+        <span class="help-block" *ngIf="formClient.get('telephone').invalid && formClient.get('telephone').touched">
+            Número inválido.
+        </span>
     </div>
 
     <div class="wrap">
-        <input type="tel" class="field" formControlName="cpf" placeholder="CPF" maxlength="11">
-        <span class="help-block"></span>
+        <input type="tel" class="field" formControlName="cpf" placeholder="CPF" mask="099.099.099-09">
+        <span class="help-block" *ngIf="formClient.get('cpf').invalid && formClient.get('cpf').touched">
+            Número de CPF inválido.
+        </span>
     </div>
 
     <div class="wrap">
-        <input type="date" class="field" formControlName="birth" >
-        <span class="help-block"></span>
+        <input type="date" class="field" formControlName="birth" placeholder="Aniversário" >
+        <span class="help-block" *ngIf="formClient.get('birth').invalid && formClient.get('birth').touched">
+            Apenas maiores de 18 anos.
+        </span>
     </div>
   
     <button type="submit" class="bnt" [ngClass]="{'-disabled': !formClient.valid}" [disabled]="!formClient.valid">
