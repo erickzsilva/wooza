@@ -1,3 +1,13 @@
+# Passo a passo para executar o projeto
+
+1 - Após baixar o projeto no repositório, acessar o diretório "wooza" pelo CMD
+
+2 - Executar o comando "npm i" para instalar o projeto
+
+3 - Executar o comando "ng s" para iniciar o aplicação
+
+4 - Acessar a aplicação pelo caminho "http://localhost:4200/"
+
 # Wooza
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
