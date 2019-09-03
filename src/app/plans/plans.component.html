@@ -5,4 +5,8 @@
   <div>
     <wza-plan *ngFor="let plan of plans" [plan]="plan" (click)="selectPlan(plan)"></wza-plan>
   </div>
+  <div class="icon" [routerLink]="'/platforms'">
+    <img class="image" src="./../../assets/seta.png">
+    <span class="text">Voltar</span>
+</div>
 </div>

@@ -1,4 +1,28 @@
-.form    
+.form
+    > .bnt
+        background: #660099
+        border-radius: 2.9px
+        border: none
+        color: white
+        cursor: pointer
+        display: block
+        font-family: Gill Sans Extrabold, sans-serif
+        height: 30px
+        margin: 15px auto
+        width: 30%
+        &.-disabled
+            background: #bbb8b8
+            cursor: default 
+    > .icon 
+        display: flex
+        margin-top: 20px
+        > .image
+            height: 26px
+            margin-right: 6px
+        > .text
+            font-family: Gill Sans Extrabold, sans-serif
+            padding-top: 5px
+            
     > .title
         color: #5b5b5b
         font-size: 20px
@@ -26,21 +50,6 @@
             color: #ff0000
             font-family: Gill Sans Extrabold, sans-serif
             font-size: 11px                
-
-    > .bnt
-        background: #660099
-        border-radius: 2.9px
-        border: none
-        color: white
-        cursor: pointer
-        display: block
-        font-family: Gill Sans Extrabold, sans-serif
-        height: 30px
-        margin: 15px auto
-        width: 30%
-        &.-disabled
-            background: #bbb8b8
-            cursor: default
 
     > .wrapper
         border: 1px solid grey

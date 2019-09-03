@@ -44,18 +44,25 @@
 
     <div class="wrapper">
         <div class="header">
-            <h2 class="title">Carrinho</h2>
+            <h2 class="title" >{{dataStorage.platform.nome}}</h2>
         </div>
         <div class="body">
             <div class="col">
-                <span class="text">Plano: {{dataStorage.dataPlatform.nome}}</span>
-                <span class="text">Franquia: {{dataStorage.dataPlan.franquia}}</span>                
+                <span class="text" *ngIf="dataStorage.plan.aparelho.nome">{{dataStorage.plan.aparelho?.nome}}</span>
+                <span class="text" *ngIf="dataStorage.plan.aparelho.numeroParcelas && dataStorage.plan.aparelho.valorParcela">Número Parcela</span>
+                <span class="text" *ngIf="dataStorage.plan.aparelho.valorParcela">Valor Parcela</span>                
+                <span class="text">Franquia: {{dataStorage.plan.franquia}}</span>                
             </div>
             <div class="col">
-                <span class="text-right">Valor: {{dataStorage.dataPlan.valor}}</span>                
+                <span class="text-right" *ngIf="dataStorage.plan.aparelho.valor">R$ {{dataStorage.plan.aparelho?.valor}}</span>                
+                <span class="text-right" *ngIf="dataStorage.plan.aparelho.numeroParcelas && dataStorage.plan.aparelho.valorParcela">{{dataStorage.plan.aparelho?.numeroParcelas}} vezes</span>                
+                <span class="text-right" *ngIf="dataStorage.plan.aparelho.valorParcela">R$ {{dataStorage.plan.aparelho?.valorParcela}}</span>                
+                <span class="text-right">R$ {{dataStorage.plan.valor}}</span>                
             </div>
         </div>
     </div>
-    
-
+    <div class="icon" (click)="back()">
+        <img class="image" src="./../../assets/seta.png">
+        <span class="text">Voltar</span>
+    </div>    
 </form>

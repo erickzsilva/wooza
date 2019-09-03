@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { FormGroup, FormBuilder, Validators } from '@angular/forms'
 import { Validator } from './../shared/validator'
+import { Router, ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'wza-form',
@@ -13,15 +14,15 @@ export class FormComponent implements OnInit {
 
   formClient: FormGroup  
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private router: Router) { }
   
   ngOnInit() {
     this.createForm();
   }
 
   dataStorage = {    
-    dataPlan : JSON.parse(localStorage.getItem('plano')),
-    dataPlatform:  JSON.parse(localStorage.getItem('plataforma'))
+    plan : JSON.parse(localStorage.getItem('plano')),
+    platform:  JSON.parse(localStorage.getItem('plataforma'))
   }
 
   createForm() { 
@@ -44,6 +45,10 @@ export class FormComponent implements OnInit {
     console.log(data);
     
     this.formClient.reset();
+  }
+
+  back(){
+    this.router.navigate(['plans/' + this.dataStorage.platform.sku])
   }
 
 }
