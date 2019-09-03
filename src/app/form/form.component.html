@@ -48,15 +48,15 @@
         </div>
         <div class="body">
             <div class="col">
-                <span class="text" *ngIf="dataStorage.plan.aparelho.nome">{{dataStorage.plan.aparelho?.nome}}</span>
-                <span class="text" *ngIf="dataStorage.plan.aparelho.numeroParcelas && dataStorage.plan.aparelho.valorParcela">Número Parcela</span>
-                <span class="text" *ngIf="dataStorage.plan.aparelho.valorParcela">Valor Parcela</span>                
+                <span class="text" *ngIf="dataStorage.plan.aparelho?.nome">{{dataStorage.plan.aparelho?.nome}}</span>
+                <span class="text" *ngIf="dataStorage.plan.aparelho?.numeroParcelas && dataStorage.plan.aparelho?.valorParcela">Número Parcela</span>
+                <span class="text" *ngIf="dataStorage.plan.aparelho?.valorParcela">Valor Parcela</span>                
                 <span class="text">Franquia: {{dataStorage.plan.franquia}}</span>                
             </div>
             <div class="col">
-                <span class="text-right" *ngIf="dataStorage.plan.aparelho.valor">R$ {{dataStorage.plan.aparelho?.valor}}</span>                
-                <span class="text-right" *ngIf="dataStorage.plan.aparelho.numeroParcelas && dataStorage.plan.aparelho.valorParcela">{{dataStorage.plan.aparelho?.numeroParcelas}} vezes</span>                
-                <span class="text-right" *ngIf="dataStorage.plan.aparelho.valorParcela">R$ {{dataStorage.plan.aparelho?.valorParcela}}</span>                
+                <span class="text-right" *ngIf="dataStorage.plan.aparelho?.valor">R$ {{dataStorage.plan.aparelho?.valor}}</span>                
+                <span class="text-right" *ngIf="dataStorage.plan.aparelho?.numeroParcelas && dataStorage.plan.aparelho?.valorParcela">{{dataStorage.plan.aparelho?.numeroParcelas}} vezes</span>                
+                <span class="text-right" *ngIf="dataStorage.plan.aparelho?.valorParcela">R$ {{dataStorage.plan.aparelho?.valorParcela}}</span>                
                 <span class="text-right">R$ {{dataStorage.plan.valor}}</span>                
             </div>
         </div>
