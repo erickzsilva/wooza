@@ -1,15 +1,15 @@
 .form    
     > .title
         color: #5b5b5b
+        font-size: 20px
         font-family: Gill Sans Extrabold, sans-serif
         text-align: center
-        font-size: 20px
 
     > .wrap
         display: flex
-        width: 94%
         flex-direction: column
         margin-bottom: 10px
+        width: 94%
 
         > .field
             border: 1px solid #999999
@@ -32,41 +32,41 @@
         border-radius: 2.9px
         border: none
         color: white
-        font-family: Gill Sans Extrabold, sans-serif
-        width: 30%
-        height: 30px
-        display: block
-        margin: 15px auto
         cursor: pointer
+        display: block
+        font-family: Gill Sans Extrabold, sans-serif
+        height: 30px
+        margin: 15px auto
+        width: 30%
         &.-disabled
             background: #bbb8b8
             cursor: default
 
     > .wrapper
-        display: flex
-        color: #5b5b5b
         border: 1px solid grey
         border-radius: 5px
+        color: #5b5b5b
+        display: flex
         font-family: Gill Sans Extrabold, sans-serif
         flex-direction: column
 
         > .header
             background: #caced2
-            width: 100%
             text-align: center
+            width: 100%
             > .title                 
                 margin: 0                
               
         > .body            
-            display: flex
             align-items: flex-end
+            display: flex
             padding: 10px
             [class*="col"]
                 display: flex
                 flex-direction: column
                 flex: 50%
                 > .text-right
-                    text-align: right
                     margin-bottom: 3px
+                    text-align: right
                 > .text
                     margin-bottom: 3px
