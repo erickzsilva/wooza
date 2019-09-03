@@ -1,6 +1,6 @@
 <div class="content">
-  <div class="title">
-      <h2>{{data.dataPlatform.descricao}}</h2>
+  <div class="wrap">
+      <h2 class="title">{{data.dataPlatform.descricao}}</h2>
   </div>
   <div>
     <wza-plan *ngFor="let plan of plans" [plan]="plan" (click)="selectPlan(plan)"></wza-plan>
