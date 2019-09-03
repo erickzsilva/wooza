@@ -25,7 +25,7 @@
     </div>
 
     <div class="wrap">
-        <input type="tel" class="field" formControlName="cpf" placeholder="CPF" mask="099.099.099-09">
+        <input type="tel" class="field" formControlName="cpf" placeholder="CPF" mask="099.099.099.09">
         <span class="help-block" *ngIf="formClient.get('cpf').invalid && formClient.get('cpf').touched">
             Número de CPF inválido.
         </span>
@@ -48,11 +48,11 @@
         </div>
         <div class="body">
             <div class="col">
-                <span class="text">Dispositivo: {{dataHist.dataPlatform.nome}}</span>
-                <span class="text">Franquia: {{dataHist.dataPlan.franquia}}</span>                
+                <span class="text">Plano: {{dataStorage.dataPlatform.nome}}</span>
+                <span class="text">Franquia: {{dataStorage.dataPlan.franquia}}</span>                
             </div>
             <div class="col">
-                <span class="text-right">Valor: {{dataHist.dataPlan.valor}}</span>                
+                <span class="text-right">Valor: {{dataStorage.dataPlan.valor}}</span>                
             </div>
         </div>
     </div>

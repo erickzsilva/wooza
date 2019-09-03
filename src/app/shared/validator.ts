@@ -8,8 +8,8 @@ export class Validator {
         let resto: number;
         let valido: boolean;
     
-        const regex = new RegExp(/^([0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}|[0-9]{2}\.?[0-9]{3}\.?[0-9]{3}\/?[0-9]{4}\-?[0-9]{2})$/);
-    
+        const regex = new RegExp('[0-9]{11}');
+
         if (
           cpf == '00000000000' ||
           cpf == '11111111111' ||
@@ -24,17 +24,18 @@ export class Validator {
           !regex.test(cpf)
         ){
           valido = false;
-          console.log(cpf);
-
         }
           
         else {
           for (let i = 1; i <= 9; i++)
             soma = soma + parseInt(cpf.substring(i - 1, i)) * (11 - i);
             resto = (soma * 10) % 11;
-    
+            
           if (resto == 10 || resto == 11) resto = 0;
-          if (resto != parseInt(cpf.substring(9, 10))) valido = false;
+          if (resto != parseInt(cpf.substring(9, 10))){
+            valido = false;
+            return { cpfInvalido: true };
+          } 
     
           soma = 0;
           for (let i = 1; i <= 10; i++)
@@ -42,7 +43,10 @@ export class Validator {
             resto = (soma * 10) % 11;
     
           if (resto == 10 || resto == 11) resto = 0;
-          if (resto != parseInt(cpf.substring(10, 11))) valido = false;
+          if (resto != parseInt(cpf.substring(10, 11))) {
+            valido = false;
+            return { cpfInvalido: true };
+          }
           valido = true;
         }
     
