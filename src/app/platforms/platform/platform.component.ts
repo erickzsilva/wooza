@@ -3,8 +3,7 @@ import { Platform } from './platform.model'
 
 @Component({
   selector: 'wza-platform',
-  templateUrl: './platform.component.html',
-  styleUrls: ['./platform.component.sass']
+  templateUrl: './platform.component.html'
 })
 export class PlatformComponent implements OnInit {
 
