@@ -18,13 +18,11 @@ export class PlatformsComponent implements OnInit {
   ngOnInit() {
     this.platformsService.getPlatform()
       .subscribe(platforms => {
-        console.log(platforms);
         this.platforms = platforms.plataformas;
       });
   }
 
   selectPlatform(platform: Platform){
-    console.log(platform);
     this.router.navigate(['plans',`${platform.sku}`]);
     localStorage.setItem('plataforma', JSON.stringify(platform));
   }

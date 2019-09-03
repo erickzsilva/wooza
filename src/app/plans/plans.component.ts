@@ -23,7 +23,6 @@ export class PlansComponent implements OnInit {
 
     this.plansService.getPlans(idPlatform)
     .subscribe(plans => {
-      console.log(plans)
       this.plans = plans.planos
     });
 
@@ -36,7 +35,6 @@ export class PlansComponent implements OnInit {
   }
 
   selectPlan(plan: Plan){
-    console.log(plan)
     this.router.navigate(['form'])
     localStorage.setItem('plano', JSON.stringify(plan))
   }

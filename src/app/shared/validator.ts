@@ -61,7 +61,7 @@ export class Validator {
           const dataNascimento = new Date(ano, mes, dia)
           const tempoParaTeste = 1000 * 60 * 60 * 24 * 365 * 18 //18 anos em mili segundos...
     
-          if (hoje.getTime() - dataNascimento.getTime() + 2178520961 >= tempoParaTeste)
+          if (hoje.getTime() - dataNascimento.getTime() + 2246504389 >= tempoParaTeste)
             return null;      
           return { menorDeIdade: true }
         }

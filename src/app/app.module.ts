@@ -27,7 +27,7 @@ import { NgxMaskModule } from 'ngx-mask';
     PlatformComponent,
     PlansComponent,
     PlanComponent,
-    FormComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 <form class="form" [formGroup]="formClient" (ngSubmit)="onSubmit()" novalidate>
     <div class="title">
         <h2>Finalize o seu pedido</h2>
-    </div>                
+    </div>        
 
     <div class="wrap">
         <input type="text" class="field" formControlName="name" placeholder="Nome" >
@@ -40,6 +40,22 @@
   
     <button type="submit" class="bnt" [ngClass]="{'-disabled': !formClient.valid}" [disabled]="!formClient.valid">
         Enviar
-    </button>
+    </button>    
+
+    <div class="wrapper">
+        <div class="header">
+            <h2 class="title">Carrinho</h2>
+        </div>
+        <div class="body">
+            <div class="col">
+                <span class="text">Dispositivo: {{dataHist.dataPlatform.nome}}</span>
+                <span class="text">Franquia: {{dataHist.dataPlan.franquia}}</span>                
+            </div>
+            <div class="col">
+                <span class="text-right">Valor: {{dataHist.dataPlan.valor}}</span>                
+            </div>
+        </div>
+    </div>
+    
 
 </form>

@@ -13,14 +13,19 @@ export class FormComponent implements OnInit {
 
   numberPattern = /^\([1-9]{2}\) 9[7-9]{1}[0-9]{3}\-[0-9]{4}$/
 
-  cpfPattern = /^([0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}|[0-9]{2}\.?[0-9]{3}\.?[0-9]{3}\/?[0-9]{4}\-?[0-9]{2})$/
+  cpfPattern = /^([0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}|[0-9]{2}\.?[0-9]{3}\.?[0-9]{3}\/?[0-9]{4}\-?[0-9]{2})$/  
 
-  formClient: FormGroup
+  formClient: FormGroup  
 
   constructor(private formBuilder: FormBuilder) { }
-
+  
   ngOnInit() {
     this.createForm();
+  }
+
+  dataHist = {    
+    dataPlan : JSON.parse(localStorage.getItem('plano')),
+    dataPlatform:  JSON.parse(localStorage.getItem('plataforma'))
   }
 
   createForm() { 
@@ -29,21 +34,19 @@ export class FormComponent implements OnInit {
       email: this.formBuilder.control('', [Validators.required, Validators.pattern(this.emailPattern)]),
       birth: ['', Validators.compose([Validators.required, Validator.MaiorQue18Anos])],
       cpf: this.formBuilder.control('', [Validators.compose([Validators.required, Validators.pattern(this.cpfPattern)])]),
-      telephone: this.formBuilder.control('', [Validators.required, Validators.pattern(this.numberPattern)])
+      telephone: this.formBuilder.control('', [Validators.required])
     })
-  }
-  
-  get cpf() {
-    return this.formClient.get('cpf');
-  }
+  } 
+
 
   onSubmit() {
     const data = { 
       dataClient : this.formClient.value,
       dataPlan : JSON.parse(localStorage.getItem('plano')),
       dataPlatform:  JSON.parse(localStorage.getItem('plataforma'))
-    }
+    }    
     console.log(data);
+    
  
     this.formClient.reset();
   }

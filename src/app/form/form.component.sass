@@ -25,9 +25,7 @@
         > .help-block
             color: #ff0000
             font-family: Gill Sans Extrabold, sans-serif
-            font-size: 11px
-            
-
+            font-size: 11px                
 
     > .bnt
         background: #660099
@@ -40,3 +38,32 @@
         margin: 10px 35%
         &.-disabled
             background: #bbb8b8
+
+    > .wrapper
+        display: flex
+        flex-direction: column
+        border: 1px solid grey
+        border-radius: 5px
+        font-family: Gill Sans Extrabold, sans-serif
+
+        > .header
+            background: #caced2
+            width: 100%
+            text-align: center
+
+            > .title                 
+                margin: 0
+              
+        > .body            
+            display: flex
+            align-items: flex-end
+            padding: 10px
+            [class*="col"]
+                display: flex
+                flex-direction: column
+                flex: 50%
+                > .text-right
+                    text-align: right
+                    margin-bottom: 3px
+                > .text
+                    margin-bottom: 3px
